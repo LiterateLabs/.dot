@@ -1,3 +1,11 @@
+" You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
+" properly. Filetype detection must be off when you run the commands so its best to
+" execute them first:
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype on
+
 syntax on
 
 imap ii <Esc>
@@ -15,12 +23,6 @@ set softtabstop=4
 
 " map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
 
-" You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
-" properly. Filetype detection must be off when you run the commands so its best to
-" execute them first:
-" filetype off
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
 
 au! BufWritePost .vimrc source %
 colorscheme vividchalk
