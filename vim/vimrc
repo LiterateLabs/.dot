@@ -1,0 +1,32 @@
+syntax on
+
+imap ii <Esc>
+
+set shellcmdflag=-ic
+set list
+set number
+set hlsearch
+set textwidth=84
+set nocompatible
+set ruler
+set expandtab
+set tabstop=4
+set softtabstop=4
+
+" map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
+
+" You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
+" properly. Filetype detection must be off when you run the commands so its best to
+" execute them first:
+" filetype off
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+
+au! BufWritePost .vimrc source %
+colorscheme vividchalk
+"colorscheme jellybeans
+"colorscheme gummybears
+"colorscheme solarized
+"colorscheme distinguished
+"colorscheme ir_black
+
