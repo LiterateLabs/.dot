@@ -2,10 +2,10 @@
 " properly. Filetype detection must be off when you run the commands so its best to
 " You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
 " execute them first:
-"filetype off
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-"filetype on
+filetype on
 
 syntax on
 
@@ -18,21 +18,15 @@ map <CR> o<Esc>
 
 "123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 
 
-set guioptions-=T
-set guioptions-=r
-
-"set colorcolumn=80
-
 set hlsearch
 set colorcolumn=79
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
-"match OverLength /\%79v.*/
 
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%78v.*/
-augroup END
+" The following lines will put a grey highlight over characters that exceed a
+" wideth of 79 characters.
+" augroup vimrc_autocmds
+"   autocmd BufEnter * highlight OverLength ctermbg=darkred guibg=#592929
+"   autocmd BufEnter * match OverLength /\%80v.*/
+" augroup END
 
 set nocompatible
 set ruler

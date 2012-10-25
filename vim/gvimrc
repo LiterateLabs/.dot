@@ -3,9 +3,15 @@ syntax on
 set showmatch " show matching brackets
 set ignorecase " do case-insensitive matching
 
-if has("syntax")
-    syntax on
-endif
+" if has("syntax")
+"     syntax on
+" endif
+
+set fullscreen
+set guifont=Monaco:h14
+set guioptions-=T
+set guioptions-=r
+set go-=L
 
 set background=dark
 set number
