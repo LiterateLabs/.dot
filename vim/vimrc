@@ -1,30 +1,53 @@
 " You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
 " properly. Filetype detection must be off when you run the commands so its best to
+" You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
 " execute them first:
-filetype off
+"filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-filetype on
+"filetype on
 
 syntax on
 
+let mapleader = ","
+let g:CommandTMaxHeight=25
 imap ii <Esc>
 
-set shellcmdflag=-ic
-set list
-set number
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
+
+"123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 
+
+set guioptions-=T
+set guioptions-=r
+
+"set colorcolumn=80
+
 set hlsearch
-set textwidth=84
+set colorcolumn=79
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+"match OverLength /\%79v.*/
+
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%78v.*/
+augroup END
+
 set nocompatible
 set ruler
+set number
+set shellcmdflag=-ic
+set list
 set expandtab
 set tabstop=4
 set softtabstop=4
+nmap <C-k> ddkP
+nmap <C-j> ddp
+vmap <C-k> xkP`[V`]
+vmap <C-j> xp`[V`]
 
-" map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
-
-
-au! BufWritePost .vimrc source %
+au! BufWritePost vimrc source %
 colorscheme vividchalk
 "colorscheme jellybeans
 "colorscheme gummybears

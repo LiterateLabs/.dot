@@ -1,0 +1,59 @@
+[01;34m.[00m
+├── .DS_Store
+├── .VimballRecord
+├── .netrwhist
+├── .new.swp
+├── [01;34mautoload[00m/
+│   └── pathogen.vim
+├── [01;34mbundle[00m/
+│   ├── [01;34mcommand-t[00m/
+│   │   ├── .git
+│   │   ├── .gitignore
+│   │   ├── .gitmodules
+│   │   ├── .mailmap
+│   │   ├── .rspec
+│   │   ├── .vim_org.yml
+│   │   ├── Gemfile
+│   │   ├── Gemfile.lock
+│   │   ├── LICENSE
+│   │   ├── Makefile
+│   │   ├── [01;36mREADME.txt[00m -> doc/command-t.txt
+│   │   ├── Rakefile
+│   │   ├── [01;34mbin[00m/
+│   │   ├── command-t.gemspec
+│   │   ├── [01;32mcompile-test.sh[00m*
+│   │   ├── [01;34mdoc[00m/
+│   │   ├── [01;34mfixtures[00m/
+│   │   ├── [01;32mmulti-spec.sh[00m*
+│   │   ├── [01;34mplugin[00m/
+│   │   ├── [01;34mruby[00m/
+│   │   ├── [01;34mspec[00m/
+│   │   └── [01;34mvendor[00m/
+│   └── [01;34mfugitive[00m/
+│       ├── .README.markdown.swp
+│       ├── .git
+│       ├── .gitignore
+│       ├── README.markdown
+│       ├── [01;34mdoc[00m/
+│       └── [01;34mplugin[00m/
+├── [01;34mcolors[00m/
+│   ├── .DS_Store
+│   ├── distinguished.vim
+│   ├── gummybears.vim
+│   ├── ir_black.vim
+│   ├── solarized.vim
+│   └── vividchalk.vim
+├── [01;34mftdetect[00m/
+│   └── markdown.vim
+├── gvimrc
+├── [01;34mplugin[00m/
+├── [01;34msnippets[00m/
+│   └── markdown.snippets
+├── [01;34msyntax[00m/
+│   ├── .DS_Store
+│   ├── markdown.vim
+│   └── python.vim
+├── test.txt
+└── vimrc
+
+18 directories, 38 files

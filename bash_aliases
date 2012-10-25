@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # make listing files easier with ls
 alias ls='ls -lFG'
 alias c='clear'
@@ -22,3 +24,4 @@ alias cls='clear; ls -lFG'
 #alias find='find . -name'
 alias bloss='workon blossom; cd ~/dev/blossom/'
 alias clsa='cls -a'
+alias d='cd ~/dev; cls'

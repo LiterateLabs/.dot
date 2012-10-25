@@ -1,10 +1,5 @@
 syntax on
 
-set list listchars=tab:\|\ 
-highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=yellow guifg=yellow
-autocmd ColorScheme * highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=yellow guifg=yellow
-match Whitespace /  \+/
-
 set showmatch " show matching brackets
 set ignorecase " do case-insensitive matching
 
@@ -14,4 +9,6 @@ endif
 
 set background=dark
 set number
+
+
 

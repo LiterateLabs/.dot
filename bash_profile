@@ -1,3 +1,5 @@
+#!/bin/bash
+
 THIS_SCRIPT=$(/usr/bin/readlink "$0")
 echo "This script: $THIS_SCRIPT"
 
