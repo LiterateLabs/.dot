@@ -1,13 +1,13 @@
-" You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
-" properly. Filetype detection must be off when you run the commands so its best to
-" You'll need to add the following to your ~/.vimrc so that pathogen will be loaded
-" execute them first:
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype on
+" You'll need to add the following to your ~/.vimrc so that pathogen will be
+" loaded properly. Filetype detection must be off when you run the commands.
 
+filetype off
+set nocp
+call pathogen#infect()
+call pathogen#helptags()
 syntax on
+filetype plugin indent on
+call pathogen#infect()
 
 let mapleader = ","
 let g:CommandTMaxHeight=25
@@ -16,21 +16,11 @@ imap ii <Esc>
 " I'm trying to get vim to recognize my bash aliases. 
 set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 
-
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 
-"123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 
-
 set hlsearch
 set colorcolumn=79
-
-" The following lines will put a grey highlight over characters that exceed a
-" wideth of 79 characters.
-" augroup vimrc_autocmds
-"   autocmd BufEnter * highlight OverLength ctermbg=darkred guibg=#592929
-"   autocmd BufEnter * match OverLength /\%80v.*/
-" augroup END
 
 " don't move the cursom backwards when exiting insert mode.
 noremap <silent> <Esc> <Esc>`^
@@ -73,28 +63,6 @@ au InsertLeave * let &updatetime=updaterestore
 " autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
 
 
-" ******* Change the background color when in insert mode **********
-
-" The main keystrokes that put you into insert mode
-" noremap i :highlight Normal ctermbg=darkpurple guibg=darkpurple<cr>i
-" noremap o :highlight Normal guibg=lightyellow<cr>o
-" noremap s :highlight Normal guibg=lightyellow<cr>s
-" noremap a :highlight Normal guibg=lightyellow<cr>a
-" noremap I :highlight Normal guibg=lightyellow<cr>I
-" noremap O :highlight Normal guibg=lightyellow<cr>O
-" noremap S :highlight Normal guibg=lightyellow<cr>S
-" noremap A :highlight Normal guibg=lightyellow<cr>A
-
-" "You need the next line to change the color back when you hit escape.
-" inoremap <Esc> <Esc>:highlight Normal guibg=Sys_Window<cr>
-
-" ******* End changing the background color in insert mode *********
-
-
-
-
-
-
 
 "********* These lines map fc and fq to close file and keep splits ************ 
 map fc <Esc>:call CleanClose(1)
@@ -118,3 +86,31 @@ endif
 exe "bd".todelbufNr
 endfunction
 "**************** End section to close file and keep splits ****************** 
+"
+"
+"
+"
+" ************ BEGIN SECTION TO HIGHLIGHT LONG LINES ***********************
+" The following lines will put a grey highlight over characters that exceed a
+" wideth of 79 characters.
+" augroup vimrc_autocmds
+"   autocmd BufEnter * highlight OverLength ctermbg=darkred guibg=#592929
+"   autocmd BufEnter * match OverLength /\%80v.*/
+" augroup END
+" ************ END SECTION TO HIGHLIGHT END OF LONG LINES *******************
+
+
+
+" ******* Change the background color when in insert mode **********
+" The main keystrokes that put you into insert mode
+" noremap i :highlight Normal ctermbg=darkpurple guibg=darkpurple<cr>i
+" noremap o :highlight Normal guibg=lightyellow<cr>o
+" noremap s :highlight Normal guibg=lightyellow<cr>s
+" noremap a :highlight Normal guibg=lightyellow<cr>a
+" noremap I :highlight Normal guibg=lightyellow<cr>I
+" noremap O :highlight Normal guibg=lightyellow<cr>O
+" noremap S :highlight Normal guibg=lightyellow<cr>S
+" noremap A :highlight Normal guibg=lightyellow<cr>A
+" "You need the next line to change the color back when you hit escape.
+" inoremap <Esc> <Esc>:highlight Normal guibg=Sys_Window<cr>
+" ******* End changing the background color in insert mode *********
