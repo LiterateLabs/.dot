@@ -13,6 +13,10 @@ let mapleader = ","
 let g:CommandTMaxHeight=25
 imap ii <Esc>
 
+" I'm trying to get vim to recognize my bash aliases. 
+set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
+
+
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 
@@ -27,6 +31,12 @@ set colorcolumn=79
 "   autocmd BufEnter * highlight OverLength ctermbg=darkred guibg=#592929
 "   autocmd BufEnter * match OverLength /\%80v.*/
 " augroup END
+
+" don't move the cursom backwards when exiting insert mode.
+noremap <silent> <Esc> <Esc>`^
+
+" allow the cursor to go to the very very last character on the line
+set virtualedit=onemore
 
 set nocompatible
 set ruler
@@ -49,3 +59,62 @@ colorscheme vividchalk
 "colorscheme distinguished
 "colorscheme ir_black
 
+
+
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+" from: http://vim.wikia.com/wiki/To_switch_back_to_normal_mode_automatically_after_inaction
+au CursorHoldI * stopinsert
+" set 'updatetime' to 15 seconds when in insert mode
+au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
+au InsertLeave * let &updatetime=updaterestore
+
+" set cursorline
+" autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
+" autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+
+
+" ******* Change the background color when in insert mode **********
+
+" The main keystrokes that put you into insert mode
+" noremap i :highlight Normal ctermbg=darkpurple guibg=darkpurple<cr>i
+" noremap o :highlight Normal guibg=lightyellow<cr>o
+" noremap s :highlight Normal guibg=lightyellow<cr>s
+" noremap a :highlight Normal guibg=lightyellow<cr>a
+" noremap I :highlight Normal guibg=lightyellow<cr>I
+" noremap O :highlight Normal guibg=lightyellow<cr>O
+" noremap S :highlight Normal guibg=lightyellow<cr>S
+" noremap A :highlight Normal guibg=lightyellow<cr>A
+
+" "You need the next line to change the color back when you hit escape.
+" inoremap <Esc> <Esc>:highlight Normal guibg=Sys_Window<cr>
+
+" ******* End changing the background color in insert mode *********
+
+
+
+
+
+
+
+"********* These lines map fc and fq to close file and keep splits ************ 
+map fc <Esc>:call CleanClose(1)
+map fq <Esc>:call CleanClose(0)
+
+function! CleanClose(tosave)
+if (a:tosave == 1)
+    w!
+endif
+let todelbufNr = bufnr("%")
+let newbufNr = bufnr("#")
+if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+    exe "b".newbufNr
+else
+    bnext
+endif
+
+if (bufnr("%") == todelbufNr)
+    new
+endif
+exe "bd".todelbufNr
+endfunction
+"**************** End section to close file and keep splits ****************** 

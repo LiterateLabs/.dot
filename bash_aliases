@@ -2,7 +2,7 @@
 
 # make listing files easier with ls
 alias ls='ls -lFG'
-alias c='clear'
+alias cl='clear'
 alias h=history
 alias p=python
 alias t='tree -FC -L 1'
@@ -13,8 +13,8 @@ alias t5='tree -FC -L 5'
 alias t6='tree -FC -L 6'
 alias t7='tree -FC -L 7'
 alias t8='tree -FC -L 8'
-alias t9='tree -FC -L 9'
-alias tt='tree -FC'
+alias c='cat - >'
+alias cc='cat - >>' 
 
 
 # make a convenience alias of "cls" to clear screen before ls

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-THIS_SCRIPT=$(/usr/bin/readlink "$0")
-echo "This script: $THIS_SCRIPT"
+# THIS_SCRIPT=$(/usr/bin/readlink "$0") 
+# echo "This script: $THIS_SCRIPT" 
 
-echo 'configuring from ~/.bash_profile'
+# echo 'configuring from ~/.bash_profile'
 
 # System-wide .bashrc file for interactive bash(1) shells.
 if [ -z "$PS1" ]; then
@@ -37,12 +37,14 @@ if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
 
-export PATH="/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH:$HOME/bin"
+# The line below should be changed to change the PATH only if it is not already
+# correct.
+export PATH="$HOME/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH"
 export PROMPT_COMMAND=''
 export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip-downloads
 
 # added by Jon on 2011/09/12 in order to have textmate work as default editor
-export EDITOR='mate -w'
+export EDITOR='macvim'
 
 #Custon colors for use with ls command
 export LSCOLORS=Gxfxcxdxbxegedabagacad
