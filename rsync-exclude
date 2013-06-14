@@ -1,0 +1,9 @@
+.git/*
+.git*
+.git/
+*.bak
+*~
+*.pyc
+attic/*
+.DS_Store
+*.swp

@@ -9,6 +9,7 @@ Create symlinks:
     ln -s ~/.dotfiles/.vim/ ~/.vim
     ln -s ~/.dotfiles/bash_profile ~/.bash_profile
     ln -s ~/.dotfiles/bash_aliases ~/.bash_aliases
+    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 
 The `vim` directory is where vim will look for configuration options.  Vim usually
 looks for a `.vim` directory in the $HOME directory, so we create a symlink from

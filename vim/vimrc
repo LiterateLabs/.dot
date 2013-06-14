@@ -7,7 +7,6 @@ call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
-call pathogen#infect()
 
 let mapleader = ","
 let g:CommandTMaxHeight=25
@@ -19,11 +18,14 @@ set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 
+noremap ;; :%s:::g<Left><Left><Left>
+
+
 set hlsearch
 set colorcolumn=79
 
-" don't move the cursom backwards when exiting insert mode.
-noremap <silent> <Esc> <Esc>`^
+" " don't move the cursom backwards when exiting insert mode.
+" noremap <silent> <Esc> <Esc>`^
 
 " allow the cursor to go to the very very last character on the line
 set virtualedit=onemore
@@ -36,6 +38,7 @@ set list
 set expandtab
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 nmap <C-k> ddkP
 nmap <C-j> ddp
 vmap <C-k> xkP`[V`]
@@ -46,13 +49,14 @@ colorscheme vividchalk
 "colorscheme jellybeans
 "colorscheme gummybears
 "colorscheme solarized
-"colorscheme distinguished
+" colorscheme distinguished
 "colorscheme ir_black
 
 
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
-" from: http://vim.wikia.com/wiki/To_switch_back_to_normal_mode_automatically_after_inaction
+" http://vim.wikia.com/wiki/To_switch_back_to_normal_mode_autom
+" atically_after_inaction
 au CursorHoldI * stopinsert
 " set 'updatetime' to 15 seconds when in insert mode
 au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
@@ -69,21 +73,21 @@ map fc <Esc>:call CleanClose(1)
 map fq <Esc>:call CleanClose(0)
 
 function! CleanClose(tosave)
-if (a:tosave == 1)
-    w!
-endif
-let todelbufNr = bufnr("%")
-let newbufNr = bufnr("#")
-if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
-    exe "b".newbufNr
-else
-    bnext
-endif
+    if (a:tosave == 1)
+        w!
+    endif
+    let todelbufNr = bufnr("%")
+    let newbufNr = bufnr("#")
+    if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+        exe "b".newbufNr
+    else
+        bnext
+    endif
 
-if (bufnr("%") == todelbufNr)
-    new
-endif
-exe "bd".todelbufNr
+    if (bufnr("%") == todelbufNr)
+        new
+    endif
+    exe "bd".todelbufNr
 endfunction
 "**************** End section to close file and keep splits ****************** 
 "

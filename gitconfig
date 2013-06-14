@@ -1,0 +1,30 @@
+#check the /etc/gitconfig file for the commented out values
+#[user]
+#    name = Joseph Brownwell
+#    email = notmyemail@gmail.com
+#[github]
+#    user = blomonomono
+#    token = 8241b44bee2ecd5e92be6d74f44002f1
+#    email = notmyemail@gmail.com
+[credential]
+    helper = osxkeychain
+[color]
+    ui = true
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow 
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[user]
+	email = jononomo@joncrowell.org
