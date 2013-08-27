@@ -39,7 +39,7 @@ PS1='\[\e]1;${PROMPT_HOSTNAME}\a\e]2;${PROMPT_HOSTNAME}:${PWD}\a\
 
 # The line below should be changed to change the PATH only if it is not already
 # correct.
-export PATH="/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH:$HOME/suborg/bin:$HOME/bin"
+export PATH="/usr/local/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH:$HOME/suborg/bin:$HOME/bin"
 
 export PROMPT_COMMAND=''
 export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip-downloads
