@@ -52,6 +52,13 @@ fi
 alias interjson='iit; export PYTHONSTARTUP='\''./interjson.py'\''; python'
 alias autoprojson='iit; export PYTHONSTARTUP='\''./autoprojson.py'\''; python'
 
+alias sst='ssh -o ServerAliveInterval=10 5212b20d4382ecbdd100009b@tabs-literatelabs.rhcloud.com'
+alias sshiit='ssh -o ServerAliveInterval=10 jon@216.224.141.220 -p 32547'
+alias shmedia='ssh -o ServerAliveInterval=10 joncrowell.org@s101210.gridserver.com'
+alias s='git status'
+alias co='git checkout'
+alias add='git add'
+
 alias reindent='py ~/reindent.py'
 alias rmpyc='rm *.pyc'
 alias rvm-restart='rvm_reload_flag=1 source '\''/Users/Jon/.rvm/scripts/rvm'\'''
@@ -62,4 +69,4 @@ alias clinp='workon clinp; cd ~/dev/clinp; clear; t'
 alias pulltransfer='rsync -avzr --exclude-from "/Users/Jon/.dotfiles/rsync-exclude" --links --perms --progress --stats --delete -e "ssh -p 32547" jon@216.224.141.220:transfer/ ~/dev/iit/transfer/'
 alias pushtransfer='rsync -avzr --exclude-from "/Users/Jon/.dotfiles/rsync-exclude" --links --perms --progress --stats --delete -e "ssh -p 32547" ~/dev/iit/transfer/ jon@216.224.141.220:transfer/'
 
-alias pullnebula1='rsync -avzr --exclude-from "/Users/Jon/.dotfiles/rsync-exclude" --links --perms --progress --stats --delete -e "ssh -p 32547" jon@216.224.141.220:dev/vcd/env/npanel/nebula1/ ~/dev/iit/nebula1/'
+alias pullnebula1='rsync -avzr --exclude-from "/Users/iit/.dotfiles/rsync-exclude" --links --perms --progress --stats --delete -e "ssh -p 32547" jon@216.224.141.220:dev/vcd/env/npanel/nebula1/ ~/dev/nebula1/'
