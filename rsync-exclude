@@ -7,3 +7,6 @@
 attic/*
 .DS_Store
 *.swp
+applet/.classpath
+applet/.project
+

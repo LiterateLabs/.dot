@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/Jon/dev/blossom/blossom'
+let g:netrw_dirhist_2='/Users/Jon/dev/iit/toolbox/cwautopro'
+let g:netrw_dirhist_3='/Users/Jon/dev/iit/toolbox'
+let g:netrw_dirhist_4='/Users/Jon/dev/iit'
+let g:netrw_dirhist_5='/Users/Jon/dev'
+let g:netrw_dirhist_6='/Users/Jon/dev/cloned_projects'
+let g:netrw_dirhist_7='/Users/Jon/suborg/test_result'
